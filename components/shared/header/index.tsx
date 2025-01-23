@@ -10,25 +10,29 @@ import Search from './search'
 export default function Header() {
   return (
     <header className='bg-black  text-white'>
-      <div className='px-2'>
+      <div className='px-3 py-3'>
         <div className='flex items-center justify-between'>
           <div className='flex items-center'>
             <Link
               href='/'
               className='flex items-center header-button font-extrabold text-2xl m-1 '
             >
-              <Image
-                src='/icons/logo.svg'
-                width={40}
-                height={40}
-                alt={`${app_name} logo`}
-              />
-              {app_name}
+              <div className='flex gap-2'>
+                <Image
+                  src='/icons/logo.svg'
+                  width={30}
+                  height={30}
+                  alt={`${app_name} logo`}
+                />
+                <span className='text-[20px]'>
+                  {app_name}
+                </span>
+              </div>
             </Link>
           </div>
-          <div className='hidden md:block flex-1 max-w-xl'>
-            <Search />
-          </div>
+            <div className='hidden md:block flex-1 max-w-xl'>
+              <Search />
+            </div>
           <Menu />
         </div>
         <div className='md:hidden block py-2'>
